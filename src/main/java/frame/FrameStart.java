@@ -3,6 +3,8 @@ package frame;
 
 import Crawler.Crawler;
 import Game.GameGUI;
+import javazoom.jl.decoder.JavaLayerException;
+import music.BGMusic;
 
 import javax.swing.*;
 import java.awt.*;
@@ -159,6 +161,7 @@ public class FrameStart extends JFrame{
                     crawler.setFileName(fileName);
                     crawler.setYear(jComboBox.getSelectedIndex());
                     boolean isFinish=false;
+
                     Thread thread = new Thread(new Runnable(){
                         @Override
                         public void run() {

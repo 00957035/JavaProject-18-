@@ -24,17 +24,18 @@ public class GameStart extends JFrame {
     private BGMusic music;
     public GameStart(String userName, String year){
         super("Game Time");
-        this.userName = userName;
-        this.year = year;
-        init();
-    }
-    public void init() { //開始視窗
         try {
             music = new BGMusic("music\\happyMusic.mp3");
             music.circularPlay();
         } catch (FileNotFoundException | JavaLayerException e) {
             e.printStackTrace();
         }
+        this.userName = userName;
+        this.year = year;
+        init();
+    }
+    public void init() { //開始視窗
+
         //背景設定
         ImageIcon img = new ImageIcon("img\\backGround.png"); //要設定的背景圖片
         JLabel imgLabel = new JLabel(img); //將背景圖放在標籤裡。

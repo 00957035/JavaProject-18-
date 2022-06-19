@@ -29,8 +29,8 @@ public class FramePage1 extends JFrame {
     private JScrollPane scrollWordTable;
     private JTable wordTable;
     private String[] title;
-    private boolean isHide = false;
-    private String [][] wordData1, wordData2;
+    private int isHide = 0;
+    private String [][] wordData1, wordData2, wordData3;
     private final Writer writer;
     private final Reader reader;
     public FramePage1(String userName, String fileName, String year){
@@ -123,7 +123,7 @@ public class FramePage1 extends JFrame {
     }
     public void setTable(){
         TableModel model;
-        if(isHide){ //isHide == true 隱藏英文
+        if(isHide == 1){ //isHide == true 隱藏英文
             model = new DefaultTableModel(wordData2, title){
                 public Class getColumnClass(int column){
                     Class returnValue;
@@ -133,8 +133,18 @@ public class FramePage1 extends JFrame {
                 }
             };
         }
-        else{ //isHide == false 顯示英文
+        else if(isHide == 0){ //isHide == false 顯示英文
             model = new DefaultTableModel(wordData1, title){
+                public Class getColumnClass(int column){
+                    Class returnValue;
+                    if ((column >= 0) && (column < getColumnCount())) returnValue = getValueAt(0, column).getClass();
+                    else returnValue = Object.class;
+                    return returnValue;
+                }
+            };
+        }
+        else{
+            model = new DefaultTableModel(wordData3, title){
                 public Class getColumnClass(int column){
                     Class returnValue;
                     if ((column >= 0) && (column < getColumnCount())) returnValue = getValueAt(0, column).getClass();
@@ -176,10 +186,11 @@ public class FramePage1 extends JFrame {
         for (String s : title) wordTable.getColumn(s).setCellRenderer(tcr);
     }
     public void fillData() {
-        wordData1 = reader.readAllWords(false);
-        wordData2 = reader.readAllWords(true);
-        if(isHide) title = new String[]{"English", "test", "Chinese", "Error"};
-        else title = new String[]{"English", "Chinese", "Error"};
+        wordData1 = reader.readAllWords(0);
+        wordData2 = reader.readAllWords(1);
+        wordData3 = reader.readAllWords(2);
+        if(isHide==0) title = new String[]{"English", "Chinese", "Error"};
+        else title = new String[]{"English", "test", "Chinese", "Error"};
     }
     public void updateTable() {
         remove(scrollWordTable);
@@ -187,13 +198,18 @@ public class FramePage1 extends JFrame {
         setTable();
         SwingUtilities.updateComponentTreeUI(this);
     }
-    public void setIsHide(boolean check){
+    public void setIsHide(int check){
         this.isHide = check;
     }
     public void checkTable() throws IOException {
         ChangeTxt changeTxt =new ChangeTxt(fileName);
         String testWord, word, str;
         int errorTime = 0;
+        for(int i = 0; i < wordTable.getRowCount(); i++) wordData3[i][1] = wordTable.getValueAt(i, 1).toString();
+        isHide = 2;
+        remove(scrollWordTable);
+        setTable();
+        SwingUtilities.updateComponentTreeUI(this);
         for(int i = 0; i < wordTable.getRowCount(); i++) {
             word = wordData1[i][0];
             testWord = wordTable.getValueAt(i, 1).toString();
@@ -237,7 +253,7 @@ public class FramePage1 extends JFrame {
                     frameStart.setVisible(true); //視窗預設是不可見的
                     break;
                 case "Hide EN":
-                    setIsHide(true);
+                    setIsHide(1);
                     updateTable();
                     break;
                 case "Test & Check":
@@ -251,11 +267,11 @@ public class FramePage1 extends JFrame {
                     }
                     break;
                 case "Show EN":
-                    setIsHide(false);
+                    setIsHide(0);
                     updateTable();
                     break;
                 case "Shuffle":
-                    if(isHide) {
+                    if(isHide == 1) {
                         icon = new ImageIcon("img\\s.png");
                         JOptionPane.showMessageDialog(FramePage1.this, "Plaese show English before shuffle the table！", "Error", 1, icon);
                         return;

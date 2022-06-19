@@ -2,11 +2,14 @@ package Crawler;
 
 import Reader_Writer.Writer;
 import Word.Word;
+import javazoom.jl.decoder.JavaLayerException;
+import music.BGMusic;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Crawler {
@@ -30,8 +33,16 @@ public class Crawler {
     private Writer writer;
     private String fileName;
     private int year;
+    private BGMusic music;
+    public Crawler() {
 
-    public Crawler() {  }
+        try {
+            music = new BGMusic("music\\startMusic.mp3");
+            music.circularPlay();
+        } catch (FileNotFoundException | JavaLayerException exception) {
+            exception.printStackTrace();
+        }
+    }
 
     public void startCrawler() throws IOException{
         writer = new Writer(getFileName());
@@ -46,6 +57,7 @@ public class Crawler {
             //System.out.print(w.toString());
         }
         System.out.println("enddddddddd");
+        music.close();
     }
     public void setYear(int year){ this.year = year; }
     public int getYear(){ return year;}

@@ -15,7 +15,7 @@ public class Reader {
     public Reader(String fileName) {
         Reader.fileName = fileName;
     }
-    public String[][] readAllWords(boolean isHide) {
+    public String[][] readAllWords(int isHide) {
         openFile();
         ArrayList<Word> list = readRecords();
         String[][] listArray = convertArrayList2Array(list, isHide);
@@ -50,26 +50,33 @@ public class Reader {
 
         return list;
     }
-    public String[][] convertArrayList2Array(ArrayList<Word> list, boolean isHide) {
+    public String[][] convertArrayList2Array(ArrayList<Word> list, int hide) {
         int size = list.size();
         String[][] listArray = new String[size][];
 
         for (int i = 0; i < size; i++) {
             String[] record;
             Word account = list.get(i);
-            if(isHide){
+            if(hide == 1){
                 record = new String[4];
                 record[0] = "";
                 record[1] = "";
                 record[2] = account.getWordCn();
                 record[3] = String.format("%d", account.getError());
             }
-            else{
+            else if(hide == 0){
                 //System.out.println(account.getWordCn());
                 record = new String[3];
                 record[0] = account.getWordEn();
                 record[1] = account.getWordCn();
                 record[2] = String.format("%d", account.getError());
+            }
+            else{
+                record = new String[4];
+                record[0] = account.getWordEn();
+                record[1] = "";
+                record[2] = account.getWordCn();
+                record[3] = String.format("%d", account.getError());
             }
             listArray[i] = record;
         }
