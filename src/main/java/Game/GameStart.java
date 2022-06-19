@@ -106,7 +106,7 @@ public class GameStart extends JFrame {
                     }
                 }
                 else{ //檔案不存在 複製error都為0的原QA給user
-                    copyFile("game\\"+year+".txt", fileName);
+                    copyFile("game\\initTxt\\"+year+".txt", fileName);
                     try {
                         file.createNewFile();
                     } catch (IOException ex) {

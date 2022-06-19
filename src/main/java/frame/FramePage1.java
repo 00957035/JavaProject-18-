@@ -1,5 +1,6 @@
 package frame;
 
+import Game.AddNewQA;
 import Game.GameGUI;
 import Game.GameStart;
 import Game.Role;
@@ -31,8 +32,8 @@ public class FramePage1 extends JFrame {
     private String[] title;
     private int isHide = 0;
     private String [][] wordData1, wordData2, wordData3;
-    private final Writer writer;
-    private final Reader reader;
+    private Writer writer;
+    private Reader reader;
     public FramePage1(String userName, String fileName, String year){
         super("單字內頁");
         writer = new Writer(fileName);
@@ -186,6 +187,8 @@ public class FramePage1 extends JFrame {
         for (String s : title) wordTable.getColumn(s).setCellRenderer(tcr);
     }
     public void fillData() {
+        writer = new Writer(fileName);
+        reader = new Reader(fileName);
         wordData1 = reader.readAllWords(0);
         wordData2 = reader.readAllWords(1);
         wordData3 = reader.readAllWords(2);
@@ -286,7 +289,10 @@ public class FramePage1 extends JFrame {
                 case "Translate":
                     try {
                         InputTranslateWord input = new InputTranslateWord();
-                        if(input.addOrNot()) writer.addWord(input.getWord().getWordEn(), input.getWord().getWordCn(), 0);
+                        if(input.addOrNot()){
+                            writer.addWord(input.getWord().getWordEn(), input.getWord().getWordCn(), 0);
+                            new AddNewQA(input.getWord().getWordEn(), "game\\"+userName+"\\"+year+".txt");
+                        }
                         updateTable();
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);

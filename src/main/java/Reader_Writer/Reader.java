@@ -43,7 +43,7 @@ public class Reader {
                 list.add(w);
             }
         } catch (NoSuchElementException elementException) {
-            System.err.println("File improperly formed. Terminating.");
+            System.err.println(fileName + " File improperly formed. Terminating.");
         } catch (IllegalStateException stateException) {
             System.err.println("Error reading from file. Terminating.");
         }

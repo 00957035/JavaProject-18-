@@ -11,6 +11,9 @@ import org.jsoup.select.Elements;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Crawler {
     private String[] url ={
@@ -34,17 +37,45 @@ public class Crawler {
     private String fileName;
     private int year;
     private BGMusic music;
-    public Crawler() {
+    public Crawler() {   }
+    public void startCrawler(String word) throws IOException {
+        writer = new Writer(getFileName());
+        try{
+            Document doc = Jsoup.connect("http://dict.cn/big5/"+word).get();
+            Elements items = doc.getElementsByClass("layout sort");
+            Element titleEle = items.select("li").get(0);
+            String question = titleEle.text(); //取德例句
+            question = question.substring(0, question.indexOf(".")); //刪除中文例句
+            question = question.replace(word, "____"); //把關鍵字取代
+            question += "\n0";
 
+            Random random = new Random(); //產生Random物件
+            List<Integer> randomList = new ArrayList<>();
+            items = doc.getElementsByClass("layout nwd"); //抓相似單字
+            while(randomList.size()<=3){ //總共4組
+                int n = random.nextInt(4); //產生0~3數字
+                if(randomList.contains(n)) continue;     //重複的不加入
+                else{
+                    randomList.add(n);
+                    if(n==3) question += ("\n" + word);
+                    else question += ("\n" + items.select("a").get(n).text());
+                }
+            }
+            System.out.println(question);
+            writer.addQuestions(question);
+        } catch (IndexOutOfBoundsException indexOutOfBoundsException){
+            System.err.println("no find QA！！");
+        }
+
+    }
+
+    public void startCrawler() throws IOException{
         try {
             music = new BGMusic("music\\startMusic.mp3");
             music.circularPlay();
         } catch (FileNotFoundException | JavaLayerException exception) {
             exception.printStackTrace();
         }
-    }
-
-    public void startCrawler() throws IOException{
         writer = new Writer(getFileName());
         Document doc = Jsoup.connect(url[getYear()]).get();
         Elements items = doc.getElementsByClass("YEVVod");
