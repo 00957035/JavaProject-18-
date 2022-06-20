@@ -76,7 +76,7 @@ public class Reader {
                 record[0] = account.getWordEn();
                 record[1] = "";
                 record[2] = account.getWordCn();
-                record[3] = String.format("%d", account.getError());
+                record[3] = "true";
             }
             listArray[i] = record;
         }

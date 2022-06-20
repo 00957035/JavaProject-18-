@@ -176,16 +176,7 @@ public class FramePage1 extends JFrame {
         //this.contain.add(scrollWordTable);
         add(scrollWordTable);
     }
-    public void setTableColor(){
-        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer() {
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                if(row%2 == 0) setBackground(new Color(255,250,250)); //基數行顏色255 250 250
-                else if(row%2 == 1) setBackground(new Color(242, 240, 248, 255));  //偶數行顏色238 224 229
-                return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-            }
-        };
-        for (String s : title) wordTable.getColumn(s).setCellRenderer(tcr);
-    }
+
     public void fillData() {
         writer = new Writer(fileName);
         reader = new Reader(fileName);
@@ -218,15 +209,51 @@ public class FramePage1 extends JFrame {
             testWord = wordTable.getValueAt(i, 1).toString();
             //System.out.println("check = " + word + " " + testWord);
             if(!word.equals(testWord)) {
-                str = (String)wordTable.getValueAt(i, 3);
-                errorTime = Integer.parseInt(str) + 1;
-                wordTable.setValueAt(errorTime+"", i, 3);
+                //str = (String)wordTable.getValueAt(i, 3);
+                errorTime = Integer.parseInt(wordData1[i][2]) + 1;
+                //wordTable.setValueAt(errorTime+"", i, 3);
                 //changeErrorTime(findWordAddress(word), ""+errorTime); //更新txt黨
                 changeTxt.readLineVarFileWord(word, ""+errorTime); //更新txt黨
+                wordTable.setValueAt("false", i, 3);
             }
         }
+        changeColor();
     }
-
+    public void setTableColor(){
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer() {
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                if(row%2 == 0) setBackground(new Color(255,250,250)); //基數行顏色255 250 250
+                else if(row%2 == 1) setBackground(new Color(242, 240, 248, 255));  //偶數行顏色238 224 229
+                return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            }
+        };
+        for (String s : title) wordTable.getColumn(s).setCellRenderer(tcr);
+    }
+    private void changeColor() {//改false的顏色
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer() {
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                //boolean selected = get
+                if(table.getValueAt(row, column).equals("false") && row%2==0){
+                    setBackground(new Color(255,250,250));
+                    setForeground(Color.RED);
+                }
+                else if(table.getValueAt(row, column).equals("false") && row%2==1){
+                    setBackground(new Color(242, 240, 248, 255));
+                    setForeground(Color.RED);
+                }
+                else if(row%2 == 0){
+                    setForeground(Color.pink.darker().darker());
+                    setBackground(new Color(255,250,250)); //基數行顏色255 250 250
+                }
+                else if(row%2 == 1){
+                    setForeground(Color.pink.darker().darker());
+                    setBackground(new Color(242, 240, 248, 255));  //偶數行顏色238 224 229
+                }
+                return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            }
+        };
+        for (String s : title) wordTable.getColumn(s).setCellRenderer(tcr);
+    }
     class myEventListner implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) { // 按鈕被點選後

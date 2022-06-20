@@ -178,9 +178,3 @@ manufacturer
 milestone
 里程碑
 0
-apple
-蘋果
-0
-banana
-香蕉
-0

@@ -5,46 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6fe00cf-1e2b-4869-b92d-17a7f0176c7b" name="变更" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/game/Anna/108year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/100year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/101year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/102year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/103year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/104year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/105year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/106year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/107year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/108year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/109year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/96year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/97year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/98year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/initTxt/99year.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/AddNewQA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/100year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/101year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/102year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/103year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/104year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/105year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/106year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/107year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/108year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/109year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/96year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/97year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/98year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/99year.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/Anna/103year.txt" beforeDir="false" afterPath="$PROJECT_DIR$/game/Anna/103year.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Crawler/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Crawler/Crawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameStart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Reader_Writer/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Reader_Writer/Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frame/FramePage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frame/FramePage1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/106year.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user/106year.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/Anna/106year.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user/Anna/106year.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/Anna/109year.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user/Anna/109year.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/Joanna/106year.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user/Joanna/106year.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +89,8 @@
       <updated>1655623816440</updated>
       <workItem from="1655632603291" duration="11000" />
       <workItem from="1655632736722" duration="6308000" />
-      <workItem from="1655640933137" duration="4746000" />
+      <workItem from="1655640933137" duration="4830000" />
+      <workItem from="1655732650706" duration="800000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1655624544231</created>
@@ -141,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655634900167</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial commit">
+      <created>1655646670016</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655646670016</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
