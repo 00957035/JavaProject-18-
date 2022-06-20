@@ -84,7 +84,7 @@ public class GameStart extends JFrame {
                     }
                     while(input.hasNext())
                         questions.add(new Questions(input.nextLine(),  Integer.parseInt(input.nextLine()), input.nextLine(), input.nextLine(), input.nextLine(), input.nextLine(), input.nextLine()));
-
+                    Collections.shuffle(questions);
                     Collections.sort(questions, new QuestionSort()); //用error次數排序
                     try { //刪除原檔案文件
                         FileWriter fileWriter = new FileWriter(fileName);
@@ -116,8 +116,8 @@ public class GameStart extends JFrame {
 
                 SecureRandom random = new SecureRandom();
 
-                Role role1 = new Role(userName, 500 + random.nextInt(500), 100 + random.nextInt(156), 20 + random.nextInt(80));
-                Role role2 = new Role("English devil", 500 + random.nextInt(500), 100 + random.nextInt(156), 20 + random.nextInt(80));
+                Role role1 = new Role(userName, 800 + random.nextInt(300), 100 + random.nextInt(150), 20 + random.nextInt(80));
+                Role role2 = new Role("English devil", 800 + random.nextInt(300), 100 + random.nextInt(150), 20 + random.nextInt(80));
 
                 GameGUI gui = new GameGUI(role1, role2, fileName);
                 gui.setSize(1250, 800); //設定寬，長

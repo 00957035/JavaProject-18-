@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d6fe00cf-1e2b-4869-b92d-17a7f0176c7b" name="变更" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Reader_Writer/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Reader_Writer/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frame/FramePage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frame/FramePage1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/Anna/109year.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user/Anna/109year.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Anna/109year.txt" beforeDir="false" afterPath="$PROJECT_DIR$/game/Anna/109year.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameStart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,8 @@
       <workItem from="1655632603291" duration="11000" />
       <workItem from="1655632736722" duration="6308000" />
       <workItem from="1655640933137" duration="4830000" />
-      <workItem from="1655732650706" duration="800000" />
+      <workItem from="1655732650706" duration="956000" />
+      <workItem from="1655733777589" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1655624544231</created>
@@ -113,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655646670016</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial commit">
+      <created>1655733472322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655733472322</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,5 +141,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game/QuestionSort.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
