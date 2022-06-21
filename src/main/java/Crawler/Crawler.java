@@ -61,6 +61,7 @@ public class Crawler {
                     else question += ("\n" + items.select("a").get(n).text());
                 }
             }
+            question += ("\n" + word);
             System.out.println(question);
             writer.addQuestions(question);
         } catch (IndexOutOfBoundsException indexOutOfBoundsException){

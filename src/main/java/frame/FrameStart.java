@@ -2,9 +2,6 @@ package frame;
 
 
 import Crawler.Crawler;
-import Game.GameGUI;
-import javazoom.jl.decoder.JavaLayerException;
-import music.BGMusic;
 
 import javax.swing.*;
 import java.awt.*;
